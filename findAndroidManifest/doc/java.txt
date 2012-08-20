@@ -1,0 +1,14 @@
+Description:
+When a java file is detected, try and find an AndroidManifest.xml file. If the
+file is not found in the current directory, it will search in the directory
+above until it hits the root directory. If the file is found, read the
+project.properties file to find the target version of android. The class path
+is set to the target version of the Android SDK.
+
+1. Requirements:
+	1. Vim 7.0+
+	2. Python
+	3. Vim with python bindings
+
+2. Install:
+	vim /path/to/java.vim -c "so %" -c "q!"
