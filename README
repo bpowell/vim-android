@@ -1,0 +1,18 @@
+README
+
+This tool sets up Android development for the vim editor. It installs a custom 
+script to find an AndroidManifest.xml file. This script sets the java classpath
+to the android.jar file. Javacomplete vim script is also installed. Because
+there is no GitHub for javacomplete, it has been added to this repo. Two other
+vim scripts are installed, Supertab and Snipmate. Both of these have GitHub 
+pages.
+
+Requirements:
+ctags
+vim
+python
+Android SDK
+
+Install:
+chmod +x android-install.sh
+./android-install.sh
