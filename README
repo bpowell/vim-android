@@ -5,7 +5,7 @@ script to find an AndroidManifest.xml file. This script sets the java classpath
 to the android.jar file. Javacomplete vim script is also installed. Because
 there is no GitHub for javacomplete, it has been added to this repo. Two other
 vim scripts are installed, Supertab and Snipmate. Both of these have GitHub 
-pages.
+pages. adblogcat enables a preview window in vim with the output of adb logcat.
 
 Requirements:
 ctags
