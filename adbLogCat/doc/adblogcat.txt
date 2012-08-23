@@ -1,0 +1,14 @@
+Description:
+This plugin will start adb with the logcat option and pipe the output to
+/tmp/adb-logcat-output.adb by default. That file then is loaded into a preview 
+window. The preview window will reload the contents of
+/tmp/adb-logcat-output.adb and scroll to the last line of the buffer
+automatically. To start and turn off this process press <F2> in normal mode.
+
+1. Requirements:
+	1. Vim 7.0+
+	2. Python
+	3. Vim with python bindings
+
+2. Install:
+	vim /path/to/adblogcat.vim -c "so %" -c "q!"
