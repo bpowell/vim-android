@@ -20,8 +20,6 @@ import vim
 import threading
 from threading import Thread
 from time import sleep
-import os
-import signal
 
 class UpdatePrevWin(Thread):
 	def __init__(self):
@@ -56,16 +54,7 @@ function! ToggleAdbLogCat()
 endfunction
 
 function! AdbLogCat()
-python << endpython
-adb_pid = os.fork()
-if adb_pid == 0:
-	logfileloc = vim.eval("s:AdbLogCat_LogFileLoc")
-	execlp("adb", "logcat > " + logfileloc)
-	vim.command("let s:AdbLogCat_adbpid = " + str(os.getpid()))
-else:
-	vim.command("echohl ErrorMsg | echo 'Cannot fork adb logcat in the background.' | echohl None")
-	return
-endpython
+	silent execute ':!adb logcat > ' . s:AdbLogCat_LogFileLoc . '&'
 endfunction
 
 function! TailFile()
@@ -111,10 +100,10 @@ endfunction
 function! TailFile_Stop()
 python << endpython
 update.stop()
-pid = vim.eval("s:AdbLogCat_adbpid")
-os.kill(pid, signal.SIGKILL)
 endpython
 	let s:AdbLogCat_IsRunning = 0
+	silent execute "!ps aux | grep 'adb logcat' | grep -v 'grep' | awk '{print $2}' | xargs kill"
+	redraw!
 endfunction
 
 function! TailFile_Restart()
