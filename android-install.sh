@@ -32,4 +32,4 @@ vim findAndroidManifest/findmanifest.vmb -c 'so %' -c 'q!'
 vim supertab/supertab.vmb -c 'so %' -c 'q!'
 vim javacomplete/javacomplete.vmb -c 'so %' -c 'q!'
 vim snipmate/snipmate.vmb -c 'so %' -c 'q!'
-
+vim adbLogCat/adbLogCat.vmb -c 'so %' -c 'q!'

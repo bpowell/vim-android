@@ -7,3 +7,4 @@ dist:
 	cd findAndroidManifest; make
 	cd javacomplete; make
 	cp Snipmate.makefile snipmate/Makefile; cd snipmate; make
+	cd adbLogCat; make
