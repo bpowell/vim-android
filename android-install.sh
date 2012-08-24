@@ -1,7 +1,7 @@
 #/usr/bin/env sh
 
 echo "[INFO] Checking for ctags."
-which ctags || { echo "[ERR] ctags not found. Please install ctags.\nhttp://ctags.sourceforge.net/"; exit 1; }
+command -v ctags > /dev/null 2>&1 || { echo >&2 "[ERR] ctags not found. Please install ctags.\nhttp://ctags.sourceforge.net/"; exit 1; }
 
 echo "[INFO] Checking for ANDROID_SDK env variable."
 echo ${ANDROID_SDK:?"[ERR] ANDROID_SDK not set."} 
