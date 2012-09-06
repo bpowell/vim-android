@@ -15,7 +15,7 @@ fi
 
 echo "[VIM] Adding things to ~/.vimrc"
 echo "\"Added by android-vim:" >> ~/.vimrc
-echo "set tags=`echo ~`/.vim/tags" >> ~/.vimrc
+echo "set tags+=`echo ~`/.vim/tags" >> ~/.vimrc
 echo "autocmd Filetype java setlocal omnifunc=javacomplete#Complete" >> ~/.vimrc
 echo "let g:SuperTabDefaultCompletionType = 'context'" >> ~/.vimrc
 
