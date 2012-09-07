@@ -23,6 +23,8 @@ echo "[INFO] Cloning Supertab"
 git clone git://github.com/ervandew/supertab.git supertab
 echo "[INFO] Cloning Snipmate"
 git clone git://github.com/msanders/snipmate.vim.git snipmate
+echo "[INFO] Cloning javacomplete"
+git clone git://github.com/vim-scripts/javacomplete.git
 
 echo "[BUILDING] Creating vimballs"
 make
