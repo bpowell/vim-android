@@ -15,7 +15,7 @@ def find_manifest(path):
 	return found
 
 found = False
-pwd = os.getcwd()
+old_dir = pwd = os.getcwd()
 
 found = find_manifest(pwd)
 
@@ -40,6 +40,8 @@ if found:
 	target = vim.eval("s:targetAndroidJar")
 	cmd = "let $CLASSPATH = '" + target + "'"
 	vim.command(cmd)
+
+os.chdir(old_dir)
 endpython
 endfunction
 
