@@ -9,8 +9,12 @@ echo ${ANDROID_SDK:?"[ERR] ANDROID_SDK not set."}
 echo "[BUILDING] Creating tags file for android."
 if ! ctags --recurse --langmap=Java:.java --languages=Java --verbose -f ~/.vim/tags $ANDROID_SDK/sources 
 then
-	echo "[ERR] ctags failed. Exiting..."
-	exit 1
+	echo "[ERR] ctags failed. Trying again with ctags-exuberant"
+    if ! ctags-exuberant --recurse --langmap=Java:.java --languages=Java --verbose -f ~/.vim/tags $ANDROID_SDK/sources 
+    then
+        echo "[ERR] ctags-exuberant failed. Now exiting..."
+        exit 1
+    fi
 fi
 
 echo "[VIM] Adding things to ~/.vimrc"
