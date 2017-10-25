@@ -25,17 +25,17 @@ echo "let g:SuperTabDefaultCompletionType = 'context'" >> ~/.vimrc
 
 echo "[INFO] Cloning Supertab"
 git clone git://github.com/ervandew/supertab.git supertab
-echo "[INFO] Cloning Snipmate"
-git clone git://github.com/msanders/snipmate.vim.git snipmate
-echo "[INFO] Cloning javacomplete"
-git clone git://github.com/vim-scripts/javacomplete.git
+echo "[INFO] Cloning snipMate"
+git clone git://github.com/garbas/vim-snipmate.git snipmate
+echo "[INFO] Cloning javacomplete2"
+git clone git://github.com/artur-shaik/vim-javacomplete2.git javacomplete2
 
 echo "[BUILDING] Creating vimballs"
 make
 
-echo "[INSTALLING] Installing supertab, javacomplete, and findAndroidManifest"
+echo "[INSTALLING] Installing Supertab, snipMate, javacomplete2, and findAndroidManifest"
 vim findAndroidManifest/findmanifest.vmb -c 'so %' -c 'q!'
 vim supertab/supertab.vmb -c 'so %' -c 'q!'
-vim javacomplete/javacomplete.vmb -c 'so %' -c 'q!'
+vim javacomplete2/javacomplete.vmb -c 'so %' -c 'q!'
 vim snipmate/snipmate.vmb -c 'so %' -c 'q!'
 vim adbLogCat/adbLogCat.vmb -c 'so %' -c 'q!'
