@@ -4,7 +4,15 @@ echo "[INFO] Checking for ctags."
 command -v ctags > /dev/null 2>&1 || { echo >&2 "[ERR] ctags not found. Please install ctags.\nhttp://ctags.sourceforge.net/"; exit 1; }
 
 echo "[INFO] Checking for ANDROID_SDK env variable."
-echo ${ANDROID_SDK:?"[ERR] ANDROID_SDK not set."} 
+if [ ! "$ANDROID_SDK" = "" ]; then
+    if [ ! -d "$ANDROID_SDK" ]; then
+        echo "[ERR] "$ANDROID_SDK" does not exist."
+    else
+        echo "[INFO] ANDROID_SDK set to "$ANDROID_SDK""
+    fi
+else
+    echo "[ERR] ANDROID_SDK not set."
+fi
 
 echo "[BUILDING] Creating tags file for android."
 if ! ctags --recurse --langmap=Java:.java --languages=Java --verbose -f ~/.vim/tags $ANDROID_SDK/sources 
