@@ -9,15 +9,16 @@ There are three vim scripts that are included in this setup. Those scripts are:
 
 	SuperTab allows us to autocomplete with the tab key.
 2. snipMate
-	- [GitHub](http://github.com/msanders/snipmate.vim.git)
+	- [GitHub](https://github.com/garbas/vim-snipmate.git)
 	- [Vim.org](http://www.vim.org/scripts/script.php?script_id=2540)
 
 	snipMate gives us the ability to add some abilities of the text editor TextMate.
 
-3. javacomplete
-	- [Vim.org](http://www.vim.org/scripts/script.php?script_id=1785)
+3. javacomplete2
+	- [GitHub](https://github.com/artur-shaik/vim-javacomplete2.git)
+	- [Vim.org](http://www.vim.org/scripts/script.php?script_id=5181)
 
-	Javacomplete does the omnicompletion for the java and android classes/functions. Javacomplete does not have a git repo on GitHub(that I could find. If someone knows if there is one, please let me know).
+	Javacomplete does the omnicompletion for the java and android classes/functions.
 
 ## How it works
 <strong>findAndroidManifest</strong> is a custom vim script that uses python to do the heavy lifting.
