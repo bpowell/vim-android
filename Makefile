@@ -2,9 +2,15 @@ SHELL=/bin/bash
 
 all: dist
 
-dist:
-	cd supertab; make
-	cd findAndroidManifest; make
-	cp Javacomplete2.makefile javacomplete2/Makefile; cd javacomplete2; make
-	cp Snipmate.makefile snipmate/Makefile; cd snipmate; make
-	cd adbLogCat; make
+dist: javacomplete2/Makefile snipmate/Makefile
+	@$(MAKE) -C supertab
+	@$(MAKE) -C findAndroidManifest
+	@$(MAKE) -C javacomplete2
+	@$(MAKE) -C snipmate
+	@$(MAKE) -C adbLogCat
+
+javacomplete2/Makefile: Javacomplete2.makefile
+	@cp $< $@
+
+snipmate/Makefile: Snipmate.makefile
+	@cp $< $@
